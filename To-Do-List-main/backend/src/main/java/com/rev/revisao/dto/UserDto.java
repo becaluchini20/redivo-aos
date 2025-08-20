@@ -1,7 +1,7 @@
 package com.rev.revisao.dto;
-
+//construtor
 public class UserDto {
-
+    
     private String name;
     private String email; //atributos da classe
 
@@ -23,3 +23,4 @@ public class UserDto {
     get- retornam os valores atuais
     set- permitem alterar os valores */
 }
+
