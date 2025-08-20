@@ -1,3 +1,5 @@
+//serve para organizar as classes que representam as entidades principais do seu sistema (objetos q refletem no bd)
+
 package com.rev.revisao.model;
 
 import jakarta.persistence.*;
@@ -40,3 +42,4 @@ public class User {
     get- retornam os valores atuais
 
     set- permitem alterar os valores */
+
