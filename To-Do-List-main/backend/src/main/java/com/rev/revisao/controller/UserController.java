@@ -8,22 +8,22 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController//
+@RestController//por ser um controlador rest, os mestodos irao retornar todos o dados diretamente
 @RequestMapping("/api/users") //define o caminho base q sera utilizado
 public class UserController {
 
     
-    private UserRepository userRepository;
+    private UserRepository userRepository; //private pq prteje o acesso direto ao atributo
     //cria um novo usuario(post)
     @PostMapping
     public ResponseEntity<String> createUser(@RequestBody UserDto userDto) { //cria uma entidade string
         if (userRepository.existsByEmail(userDto.getEmail())) { // busca o novo usuario pelo email, caso o email já esteja em uso, envia um aviso
-            return ResponseEntity.badRequest().body("Email already in use.");
+            return ResponseEntity.badRequest().body("Email em uso.");
         }
         // usuario criado com nome e email e salvo
         User user = new User(userDto.getName(), userDto.getEmail());
         userRepository.save(user);
-        return ResponseEntity.ok("User created successfully.");
+        return ResponseEntity.ok("Usuario criado com sucesso.");// -> usuario criado
     }
     //lista os usuarios que foram buscados no repositorio
     @GetMapping
@@ -45,7 +45,7 @@ public class UserController {
                     user.setName(userDto.getName());
                     user.setEmail(userDto.getEmail()); //atualiza os dados desse usuario
                     userRepository.save(user); // salva os dados atualizados 
-                    return ResponseEntity.ok("User updated.");
+                    return ResponseEntity.ok("Usuario atualizado.");
                 })
                 .orElse(ResponseEntity.notFound().build()); //usuario nao foi encontrado, entao nao pode ser atualizado 
     }
@@ -56,7 +56,8 @@ public class UserController {
             return ResponseEntity.notFound().build(); // ele indica que o usuario nn foi encontrado
         }
         userRepository.deleteById(id); 
-        return ResponseEntity.ok("User deleted."); //caso o usuario exista, ele é deletado e é enviado essa mensagem 
+        return ResponseEntity.ok("Usuario deletado."); //caso o usuario exista, ele é deletado e é enviado essa mensagem 
     }
 }
+
 
