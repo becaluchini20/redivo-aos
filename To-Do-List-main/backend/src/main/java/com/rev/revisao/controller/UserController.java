@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController//por ser um controlador rest, os mestodos irao retornar todos o dados diretamente
 @RequestMapping("/api/users") //define o caminho base q sera utilizado
-public class UserController {
+public class UserController { //public pq outas classes podem acessar
 
     
     private UserRepository userRepository; //private pq prteje o acesso direto ao atributo
@@ -62,6 +62,7 @@ public class UserController {
         return ResponseEntity.ok("Usuario deletado."); //caso o usuario exista, ele é deletado e é enviado essa mensagem 
     }
 }
+
 
 
 
