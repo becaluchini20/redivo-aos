@@ -1,3 +1,6 @@
+//essa pasta serve pra organizar e agrupar todas as classes que lidam com requisicoes http (GET, POST, PUT, DELETE)
+
+
 package com.rev.revisao.controller;
 
 import com.rev.revisao.dto.UserDto;
@@ -59,5 +62,6 @@ public class UserController {
         return ResponseEntity.ok("Usuario deletado."); //caso o usuario exista, ele é deletado e é enviado essa mensagem 
     }
 }
+
 
 
