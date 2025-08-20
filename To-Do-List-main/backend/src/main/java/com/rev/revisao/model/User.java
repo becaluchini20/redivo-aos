@@ -16,7 +16,7 @@ public class User {
     private String email; //uma tabela para email do usuario, porem nn pode ter dois usuarios com o mesmo email pois ele é unico
 
     // Construtor
-    public User() {}
+    public User() {
 
     public User(String name, String email) {
         this.name = name;
@@ -38,4 +38,5 @@ public class User {
 }
  /*
     get- retornam os valores atuais
+
     set- permitem alterar os valores */
