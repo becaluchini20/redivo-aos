@@ -1,3 +1,6 @@
+//serve para organizar os objetos usados para transferir dados entre diferentes camadas da aplicação
+
+
 package com.rev.revisao.dto;
 //construtor
 public class UserDto {
@@ -5,7 +8,7 @@ public class UserDto {
     private String name;
     private String email; //atributos da classe
 
-    public UserDto() {}
+    public UserDto() {
 
     public UserDto(String name, String email) { //aqui o construtos esta com os parametros, permite criar um usuariocom nome e email definido
         this.name = name;
@@ -23,4 +26,5 @@ public class UserDto {
     get- retornam os valores atuais
     set- permitem alterar os valores */
 }
+
 
